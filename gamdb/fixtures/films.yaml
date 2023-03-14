@@ -1,0 +1,32 @@
+- model: films.movies
+  pk: 1
+  fields:
+    name: Prava blondynka
+    year: 2001
+    description: Elle Woodsov� m� v�echno. Je prezidentkou d�v��ho spolku, Miss �erven
+      ve �koln�m kalend��i a p�edev��m p��rodn� blond�nou. Chod� s nejhez��m klukem
+      ze �koly, Warnerem Huntingtonem III., a netou�� po ni�em jin�m ne� se st�t pan�
+      Huntingtonovou III. Jen�e pro Warnera je a� "p��li� blond" na to, aby ji po��dal
+      o ruku. Kdy� ji n�hle opust� a zam��� studovat pr�va na Harvard, Elle vezme
+      dal�� ud�losti do sv�ch pe�liv� upraven�ch rukou. P�ihl�s� se na univerzitu
+      tak�! Pr�vnick� fakulta je v�ak na hony vzd�len� pohodl� jej�ho baz�nu a n�kupn�ho
+      centra a Elle podstupuje nejt잚� boj sv�ho �ivota - za l�sku, �est, spravedlnost
+      a respekt pro v�echny blond�nky!
+- model: films.movies
+  pk: 2
+  fields:
+    name: Pan V�elka
+    year: 2007
+    description: http://www.script-o-rama.com/movie_scripts/a1/bee-movie-script-transcript-seinfeld.html
+- model: films.movies
+  pk: 3
+  fields:
+    name: Shrek
+    year: 2001
+    description: Somebody once told me
+- model: films.movies
+  pk: 4
+  fields:
+    name: UWU
+    year: 2069
+    description: skipidubap
