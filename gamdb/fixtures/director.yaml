@@ -1,0 +1,10 @@
+- model: films.director
+  pk: 1
+  fields:
+    name: Greg Richardson
+    birth_year: null
+- model: films.director
+  pk: 2
+  fields:
+    name: Owen Hurley
+    birth_year: null
