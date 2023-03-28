@@ -15,7 +15,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from films.views import homepage
 
-urlpatterns = [
+urlpatterns = [#rozcestik ktera funkce bude obsluhovat ktery url
     path('admin/', admin.site.urls),
+    path('',homepage)
 ]
