@@ -15,9 +15,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from films.views import homepage
+from films.views import homepage, directors
 
 urlpatterns = [#rozcestik ktera funkce bude obsluhovat ktery url
     path('admin/', admin.site.urls),
-    path('',homepage)
+    path('reziseri/', directors, name="directors"),
+    path('',homepage, name="homepage")
 ]
