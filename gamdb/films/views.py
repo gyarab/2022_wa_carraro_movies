@@ -11,6 +11,13 @@ def directors(request):
     print(context)
     return render(request, 'directors.html', context)
 
+    
+def movies(request):
+    context = {
+        "movies": Movies.objects.all()
+    }
+    return render(request, 'movies.html', context)
+
 def homepage(request):
     #return HttpResponse("HELLOOO")
     context ={
