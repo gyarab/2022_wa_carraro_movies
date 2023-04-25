@@ -20,8 +20,18 @@ def director(request):
 
     
 def movies(request):
+    movies_querystring = Movies.objects.all()
+    genre = request.GET.get('genre')
+    search = request.GET.get('search')
+    if search:
+        movies_querystring = movies_querystring.filter(name__icontains=search)
+    if genre:
+        movies_querystring = movies_querystring.filter(genres__name=genre)
     context = {
-        "movies": Movies.objects.all()
+        "movies": movies_querystring,
+        "genres": Genre.objects.all().order_by('name'),
+        "genre": genre,
+        "search":search,
     }
     return render(request, 'movies.html', context)
 
@@ -30,6 +40,12 @@ def movie(request,id):
         "movies": Movies.objects.all()
     }
     return render(request, 'movies.html', context)
+
+def actor(request):
+    context = {
+        "movies": Actor.objects.all()
+    }
+    return render(request, 'actors.html', context)
 
 def homepage(request):
     #return HttpResponse("HELLOOO")
