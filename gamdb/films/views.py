@@ -1,21 +1,19 @@
 from django.shortcuts import render
-from .models import Movies, Director, Genre, Actor
+from .models import Movies, Director, Genre, Actor, Comment
+from django.db.models import Q
+from .forms import CommentForm
 
 def directors(request):
-    context = {
-        'logic': True,
-        'title': "Nejoblíbenější režiséři",
+    c context = {
         'directors': Director.objects.all()
     }
     print(context)
     return render(request, 'directors.html', context)
+
 def director(request):
     context = {
-        'logic': True,
-        'title': "Nejoblíbenější režiséři",
-        'directors': Director.objects.all()
+        "director": Director.objects.get(id=id)
     }
-    print(context)
     return render(request, 'directors.html', context)
 
     
@@ -36,21 +34,52 @@ def movies(request):
     return render(request, 'movies.html', context)
 
 def movie(request,id):
+    m = Movie.objects.get(id=id)
+    f = CommentForm()
+
+    if request.POST:
+        f = CommentForm(request.POST)
+        if f.is_valid():
+            # ulozit do DB
+            c = Comment(
+                movie=m,
+                author=f.cleaned_data.get('author'),
+                text=f.cleaned_data.get('text'),
+                rating=f.cleaned_data.get('rating'),
+            )
+            if not c.author:
+                c.author = 'Anonym'
+            c.save()
+            # nastavit prazdny form
+            f = CommentForm()
+
     context = {
-        "movies": Movies.objects.all()
+        "movie": m,
+        "comments": Comment.objects.filter(movie=m).order_by('-created_at'),
+        "form": f
     }
     return render(request, 'movies.html', context)
 
 def actor(request):
     context = {
-        "movies": Actor.objects.all()
+      "actor": Actor.objects.get(id=id)
+    }
+    return render(request, 'actors.html', context)
+
+def actors(request):
+    context = {
+        "actors": Actor.objects.all()
     }
     return render(request, 'actors.html', context)
 
 def homepage(request):
-    #return HttpResponse("HELLOOO")
-    context ={
-        'movies':Movies.objects.all(),
+     context = {
+        # TODO use first 10 top rated
+        "movies": Movie.objects.all(),
+        "actors": Actor.objects.all(),
+        "directors": Director.objects.all(),
+        "genres": Genre.objects.all(),
     }
-    return render(request,'main.html',context)
+
+  return render(request, 'homepage.html', context)      
 
