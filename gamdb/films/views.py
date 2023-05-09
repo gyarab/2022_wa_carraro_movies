@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Movies, Director, Genre, Actor, Comment
+from .models import Movie, Director, Genre, Actor, Comment
 from django.db.models import Q
 from .forms import CommentForm
 
@@ -18,7 +18,7 @@ def director(request):
 
     
 def movies(request):
-    movies_querystring = Movies.objects.all()
+    movies_querystring = Movie.objects.all()
     genre = request.GET.get('genre')
     search = request.GET.get('search')
     if search:
@@ -34,13 +34,13 @@ def movies(request):
     return render(request, 'movies.html', context)
 
 def movie(request,id):
-    m = Movies.objects.get(id=id)
+    m = Movie.objects.get(id=id)
     f = CommentForm()
 
     if request.POST:
         f = CommentForm(request.POST)
-        if f.is_valid():
-            # ulozit do DB
+        if f.is_valid():#pokud je validni
+            # forms musi but ulozeny do databaze
             c = Comment(
                 movie=m,
                 author=f.cleaned_data.get('author'),
@@ -49,7 +49,7 @@ def movie(request,id):
             )
             if not c.author:
                 c.author = 'Anonym'
-            c.save()
+            c.save()#pokud neni formular validni ulozi data
             # nastavit prazdny form
             f = CommentForm()
 
@@ -58,7 +58,7 @@ def movie(request,id):
         "comments": Comment.objects.filter(movie=m).order_by('-created_at'),
         "form": f
     }
-    return render(request, 'movies.html', context)
+    return render(request, 'movie.html', context)
 
 def actor(request):
     context = {
@@ -75,7 +75,7 @@ def actors(request):
 def homepage(request):
     context = {
         # TODO use first 10 top rated
-        "movies": Movies.objects.all(),
+        "movies": Movie.objects.all(),
         "actors": Actor.objects.all(),
         "directors": Director.objects.all(),
         "genres": Genre.objects.all(),

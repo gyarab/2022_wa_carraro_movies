@@ -20,9 +20,9 @@ from films.views import homepage, directors, movies, movie, director,actor
 urlpatterns = [#rozcestik ktera funkce bude obsluhovat ktery url
     path('admin/', admin.site.urls),
     path('reziseri/', directors, name="directors"),
+    path('reziser/<int:id>',director,name='director'),
     path('',homepage, name="homepage"),
     path('filmy/', movies, name="movies"),
     path('film/<int:id>',movie,name='movie'),
-    path('reziser/<int:id>',director,name='director'),
     path('herci/',actor,name='herci'),
 ]

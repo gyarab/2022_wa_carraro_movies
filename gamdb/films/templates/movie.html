@@ -7,22 +7,20 @@
 {% block content %}
 <h1>{{movie.name}}</h1>
 <h2>{{movie.avg_rating}}</h2>
-<img src="{% if movie.image_url %}{{movie.image_url}}{% else %}https://place-hold.it/180x100/{% endif %}" alt="Card image cap">
+<img src="{% if movie.image_url %}{{movie.image_url}}{% else %}https://placekitten.com/g/400/350/{% endif %}" alt="Card image cap">
 <p>{{ movie.description|safe }}</p>
 
-<form action="" method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <input type="submit" value="Odeslat" />
+<form action=""method="post">
+    {% csrf_token %}{# protecti vuci botum spammu,kazdy formular to musi obshovat#}
+    {{form.as_p}}{# oddeli jednotlive casti do <p>jde i s jinyma tagama#}
 </form>
-
-{% for comment in comments %}
-<p>
-    <strong>{{ comment.author }}</strong>, {{ comment.created_at|date:"j. n. Y H:i" }}<br />
-    {% if comment.rating %}{{ comment.rating }}%<br />{% endif %}
-    {{ comment.text }}
-</p>
-<hr />
+<button class="btn btn-outline-secondary" type="submit" id="button-addon2">Submit</button>{#nefunguje mi link tlacitko#}
+{%for comment in comments%}
+<div class="mb-2">
+    <strong>
+    {{comment.author}} </strong> {{comment.created_at|date:"j. n. Y"}}
+<br>
+ {{comment.text}}
+</div>
 {% endfor %}
-
 {% endblock content %}

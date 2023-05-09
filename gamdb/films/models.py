@@ -1,7 +1,7 @@
 from django.db import models# models = reprezentace databaze
 from datetime import datetime
 
-class Movies(models.Model):
+class Movie(models.Model):
     name = models.CharField(max_length=200)
     slug = models.SlugField()
     image_url = models.CharField(max_length=200,blank=True)
@@ -23,10 +23,11 @@ class Actor(models.Model):
     def __str__(self):
         return f"{self.name}({self.birth_year})"
 class Comment(models.Model):
-    author_name = models.CharField(max_length=200)
-    comment = models.CharField(max_length=400)
-    rating = models.IntegerField()
-    time= models.CharField(max_length=200)
+    movie = models.ForeignKey(Movie, on_delete=models.CASCADE)
+    author = models.CharField(max_length=255, blank=True)
+    text = models.TextField(blank=True)
+    rating = models.IntegerField(null=True, blank=True)
+    created_at = models.DateTimeField(auto_now_add=True)
 
 
 class Director(models.Model):

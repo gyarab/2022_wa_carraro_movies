@@ -1,58 +1,58 @@
-- model: films.movies
+- model: films.movie
   pk: 3
   fields:
     name: Shrek
     year: 2001
     description: Somebody once told me
-- model: films.movies
+- model: films.movie
   pk: 6
   fields:
     name: 'Barbie: Odvážná princezna'
     year: 2015
     description: mid
-- model: films.movies
+- model: films.movie
   pk: 7
   fields:
     name: Barbie z Labutího jezera
     year: 2023
     description: 10/10
-- model: films.movies
+- model: films.movie
   pk: 8
   fields:
     name: 'Barbie: Motýlí víla'
     year: 2008
     description: 7/10
-- model: films.movies
+- model: films.movie
   pk: 9
   fields:
     name: Barbie - Princezna a zpěvačka
     year: 2012
     description: 8/10
-- model: films.movies
+- model: films.movie
   pk: 11
   fields:
     name: Barbie a Diamantový zámek
     year: 2008
     description: 9/10
-- model: films.movies
+- model: films.movie
   pk: 12
   fields:
     name: Barbie a Tři mušketýři
     year: 2009
     description: 8/10
-- model: films.movies
+- model: films.movie
   pk: 13
   fields:
     name: Barbie a 12 tančících princezen
     year: 2006
     description: 5/10
-- model: films.movies
+- model: films.movie
   pk: 14
   fields:
     name: 'Barbie: Ve hvězdách'
     year: 2016
     description: 8/10
-- model: films.movies
+- model: films.movie
   pk: 15
   fields:
     name: 'Barbie: Tajná agentka'
