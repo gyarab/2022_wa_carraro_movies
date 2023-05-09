@@ -4,7 +4,7 @@ from django.db.models import Q
 from .forms import CommentForm
 
 def directors(request):
-    c context = {
+    context = {
         'directors': Director.objects.all()
     }
     print(context)
@@ -34,7 +34,7 @@ def movies(request):
     return render(request, 'movies.html', context)
 
 def movie(request,id):
-    m = Movie.objects.get(id=id)
+    m = Movies.objects.get(id=id)
     f = CommentForm()
 
     if request.POST:
@@ -73,13 +73,11 @@ def actors(request):
     return render(request, 'actors.html', context)
 
 def homepage(request):
-     context = {
+    context = {
         # TODO use first 10 top rated
-        "movies": Movie.objects.all(),
+        "movies": Movies.objects.all(),
         "actors": Actor.objects.all(),
         "directors": Director.objects.all(),
         "genres": Genre.objects.all(),
     }
-
-  return render(request, 'homepage.html', context)      
-
+    return render(request, 'homepage.html', context)
