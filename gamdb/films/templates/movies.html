@@ -11,18 +11,18 @@
     <form action="./"method="get">
         <div class="input-group mb-3">
             <input type="text" name="search" value="{{ search|default:"" }}" class="form-control" placeholder="..." aria-label="Hledat" aria-describedby="button-addon2">
-            <button class="btn btn-outline-secondary" type="submit" id="button-addon2">Submit</button>
+            <button class="btn btn-danger btn-outline-light" type="submit" id="button-addon2">Submit</button>
         </div>
     </form>
 </div>
 <div class="row">
     <ul class="list-inline">
         <li class="list-inline-item">
-            <a class="btn {% if not genre %}btn-primary{% else %}btn-outline-secondary{% endif %}" href="./">All</a>
+            <a class="btn {% if not genre %}btn-light{% else %}btn-outline-secondary{% endif %}" href="./">All</a>
         </li>
         {% for g in genres %}
         <li class="list-inline-item">
-            <a class="btn {% if g.name == genre %}btn-primary{% else %}btn-outline-secondary{% endif %}" href="./?genre={{ g.name }}">{{ g.name }}</a>
+            <a class="btn {% if g.name == genre %}btn-danger{% else %}btn-outline-secondary{% endif %}" href="./?genre={{ g.name }}">{{ g.name }}</a>
         </li>
         {% endfor %}
     </ul>
@@ -35,12 +35,12 @@
             <div class="card-body">
                 <h5 class="card-title">{{ movie.name }}</h5>
                 {% for genre in movie.genres.all %}
-                    <span class="badge rounded-pill text-bg-primary">{{genre.name}}</span>
+                    <span class="badge rounded-pill text-bg-danger">{{genre.name}}</span>
                 {% endfor %}
                 <p class="card-text ">{{ movie.description|truncatewords_html:"20" }}</p>
             </div>
             <div class="card-footer text-end">
-                <a href="{% url 'movie' movie.id %}" class="btn btn-primary">Detaily</a>
+                <a href="{% url 'movie' movie.id %}" class="btn btn-light">Detaily</a>
             </div>
         </div>
     </div>

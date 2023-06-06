@@ -10,11 +10,11 @@ def directors(request):
     print(context)
     return render(request, 'directors.html', context)
 
-def director(request):
+def director(request,id):
     context = {
         "director": Director.objects.get(id=id)
     }
-    return render(request, 'directors.html', context)
+    return render(request, 'director.html', context)
 
     
 def movies(request):
