@@ -2,59 +2,121 @@
   pk: 3
   fields:
     name: Shrek
+    slug: no-slug
+    image_url: ''
     year: 2001
     description: Somebody once told me
+    director: null
+    genres: []
 - model: films.movie
   pk: 6
   fields:
-    name: 'Barbie: Odv√°≈æn√° princezna'
+    name: 'Barbie: Odv·ûn· princezna'
+    slug: no-slug
+    image_url: ''
     year: 2015
     description: mid
+    director: null
+    genres: []
 - model: films.movie
   pk: 7
   fields:
-    name: Barbie z Labut√≠ho jezera
+    name: Barbie z LabutÌho jezera
+    slug: no-slug
+    image_url: ''
     year: 2023
     description: 10/10
+    director: null
+    genres: []
 - model: films.movie
   pk: 8
   fields:
-    name: 'Barbie: Mot√Ωl√≠ v√≠la'
+    name: 'Barbie: Mot˝lÌ vÌla'
+    slug: no-slug
+    image_url: ''
     year: 2008
     description: 7/10
+    director: 1
+    genres:
+    - 4
 - model: films.movie
   pk: 9
   fields:
-    name: Barbie - Princezna a zpƒõvaƒçka
+    name: Barbie - Princezna a zpÏvaËka
+    slug: no-slug
+    image_url: ''
     year: 2012
     description: 8/10
+    director: null
+    genres: []
 - model: films.movie
   pk: 11
   fields:
-    name: Barbie a Diamantov√Ω z√°mek
+    name: Barbie a Diamantov˝ z·mek
+    slug: no-slug
+    image_url: ''
     year: 2008
     description: 9/10
+    director: null
+    genres:
+    - 4
 - model: films.movie
   pk: 12
   fields:
-    name: Barbie a T≈ôi mu≈°ket√Ω≈ôi
+    name: Barbie a T¯i muöket˝¯i
+    slug: no-slug
+    image_url: ''
     year: 2009
     description: 8/10
+    director: null
+    genres:
+    - 1
+    - 3
 - model: films.movie
   pk: 13
   fields:
-    name: Barbie a 12 tanƒç√≠c√≠ch princezen
+    name: Barbie a 12 tanËÌcÌch princezen
+    slug: no-slug
+    image_url: ''
     year: 2006
     description: 5/10
+    director: null
+    genres:
+    - 1
+    - 2
+    - 3
 - model: films.movie
   pk: 14
   fields:
-    name: 'Barbie: Ve hvƒõzd√°ch'
+    name: 'Barbie: Ve hvÏzd·ch'
+    slug: no-slug
+    image_url: ''
     year: 2016
     description: 8/10
+    director: null
+    genres:
+    - 1
+    - 3
 - model: films.movie
   pk: 15
   fields:
-    name: 'Barbie: Tajn√° agentka'
+    name: 'Barbie: Tajn· agentka'
+    slug: no-slug
+    image_url: ''
     year: 2016
     description: 8/10
+    director: null
+    genres:
+    - 2
+- model: films.movie
+  pk: 16
+  fields:
+    name: jhytf
+    slug: ujy
+    image_url: ''
+    year: 56
+    description: ti5di6ti76
+    director: 1
+    genres:
+    - 1
+    - 2
