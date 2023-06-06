@@ -1,5 +1,4 @@
 {% extends 'main.html' %}
-
 {% block title %}
     Režiséři | {{ block.super }}
 {% endblock %}
@@ -11,7 +10,7 @@
 <div class="row row-cols-2">
     {% for d in directors %}
     <div class="card">
-        <img src="https://place-hold.it/300x200" class="card-img-top" alt="...">
+        <img src="https://placekitten.com/g/200/150" class="card-img-top" alt="...">
         <div class="card-body">
             <h5 class="card-title">{{ d.name }}{% if d.birth_year %}
             &ndash; {{ d.birth_year }}

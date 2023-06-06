@@ -1,0 +1,24 @@
+- model: films.comment
+  pk: 1
+  fields:
+    movie: 6
+    author: your mom
+    text: <3
+    rating: 99999999
+    created_at: 2023-05-09 08:11:47.821695+00:00
+- model: films.comment
+  pk: 2
+  fields:
+    movie: 6
+    author: once again your mom
+    text: stop
+    rating: 69
+    created_at: 2023-05-09 08:19:57.164882+00:00
+- model: films.comment
+  pk: 3
+  fields:
+    movie: 6
+    author: u know who lol
+    text: please eat your veggies guys
+    rating: 0
+    created_at: 2023-05-09 08:20:22.818967+00:00

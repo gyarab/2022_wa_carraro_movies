@@ -1,0 +1,8 @@
+- model: films.actor
+  pk: 1
+  fields:
+    name: slaz
+    slug: slay
+    birth_year: 8596
+    photo_url: null
+    description: ''
