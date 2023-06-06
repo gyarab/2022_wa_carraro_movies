@@ -11,7 +11,7 @@
 - model: films.movie
   pk: 6
   fields:
-    name: 'Barbie: Odváná princezna'
+    name: 'Barbie: OdvÃ¡Å¾nÃ¡ princezna'
     slug: no-slug
     image_url: ''
     year: 2015
@@ -21,7 +21,7 @@
 - model: films.movie
   pk: 7
   fields:
-    name: Barbie z Labutího jezera
+    name: Barbie z LabutÃ­ho jezera
     slug: no-slug
     image_url: ''
     year: 2023
@@ -31,7 +31,7 @@
 - model: films.movie
   pk: 8
   fields:
-    name: 'Barbie: Motılí víla'
+    name: 'Barbie: MotÃ½lÃ­ vÃ­la'
     slug: no-slug
     image_url: ''
     year: 2008
@@ -42,7 +42,7 @@
 - model: films.movie
   pk: 9
   fields:
-    name: Barbie - Princezna a zpìvaèka
+    name: Barbie - Princezna a zpÄ›vaÄka
     slug: no-slug
     image_url: ''
     year: 2012
@@ -52,7 +52,7 @@
 - model: films.movie
   pk: 11
   fields:
-    name: Barbie a Diamantovı zámek
+    name: Barbie a DiamantovÃ½ zÃ¡mek
     slug: no-slug
     image_url: ''
     year: 2008
@@ -63,7 +63,7 @@
 - model: films.movie
   pk: 12
   fields:
-    name: Barbie a Tøi mušketıøi
+    name: Barbie a TÅ™i muÅ¡ketÃ½Å™i
     slug: no-slug
     image_url: ''
     year: 2009
@@ -75,7 +75,7 @@
 - model: films.movie
   pk: 13
   fields:
-    name: Barbie a 12 tanèících princezen
+    name: Barbie a 12 tanÄÃ­cÃ­ch princezen
     slug: no-slug
     image_url: ''
     year: 2006
@@ -88,7 +88,7 @@
 - model: films.movie
   pk: 14
   fields:
-    name: 'Barbie: Ve hvìzdách'
+    name: 'Barbie: Ve hvÄ›zdÃ¡ch'
     slug: no-slug
     image_url: ''
     year: 2016
@@ -100,7 +100,7 @@
 - model: films.movie
   pk: 15
   fields:
-    name: 'Barbie: Tajná agentka'
+    name: 'Barbie: TajnÃ¡ agentka'
     slug: no-slug
     image_url: ''
     year: 2016
