@@ -9,12 +9,25 @@
 <h2>{{movie.avg_rating}}</h2>
 <img src="{% if movie.image_url %}{{movie.image_url}}{% else %}https://placekitten.com/g/400/350/{% endif %}" alt="Card image cap">
 <p>{{ movie.description|safe }}</p>
+<div class="my-2">
+    <p class="text">
+        <button
+            class="btn btn-secondary"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#addComment"
+        >
+            Add comment
+        </button>
+    </p>
 
-<form action=""method="post">
-    {% csrf_token %}{# protecti vuci botum spammu,kazdy formular to musi obshovat#}
-    {{form.as_p}}{# oddeli jednotlive casti do <p>jde i s jinyma tagama#}
-</form>
-<button class="btn btn-outline-secondary" type="submit" id="button-addon2">Submit</button>{#nefunguje mi link tlacitko#}
+<div class="row collapse" id="addComment">
+    <form action="" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input class=" btn btn-light" type="submit" value="Submit" />
+    </form>
+</div>
 {%for comment in comments%}
 <div class="mb-2">
     <strong>
