@@ -15,8 +15,8 @@
             <h5 class="card-title">{{ d.name }}{% if d.birth_year %}
             &ndash; {{ d.birth_year }}
             {% endif %}</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <a href=# class="btn btn-light">Detaily</a>
+            <p class="card-text"> {{d.description}}</p>
+            <a href="{% url 'director' d.id %}" class="btn btn-light">Detaily</a>
         </div>
     </div>
     {% endfor %}

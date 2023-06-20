@@ -7,17 +7,16 @@
 {% block content %}
 <h1>{{ title|default:"Herci" }}</h1>
 
-{# Tady bude seznam hercu #}
 <div class="row row-cols-2">
-    {% for d in actor %}
+    {% for a in actors %}
     <div class="card">
-        <img src="https://place-hold.it/300x200" class="card-img-top" alt="...">
+        <img src="https://placekitten.com/g/200/150" class="card-img-top" alt="...">
         <div class="card-body">
-            <h5 class="card-title">{{ d.name }}{% if d.birth_year %}
-            &ndash; {{ d.birth_year }}
+            <h5 class="card-title">{{ a.name }}{% if a.birth_year %}
+            &ndash; {{ a.birth_year }}
             {% endif %}</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
+            <p class="card-text">{{actor.description}}</p>
+            <a href="{% url 'actor' a.id %}" class="btn btn-light">Detaily</a>
         </div>
     </div>
     {% endfor %}

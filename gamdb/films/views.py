@@ -9,13 +9,22 @@ def directors(request):
     }
     print(context)
     return render(request, 'directors.html', context)
+def actors(request):
+    context = {
+    "actors": Actor.objects.all()
+    }
+    return render(request, 'actors.html', context)
 
 def director(request,id):
     context = {
         "director": Director.objects.get(id=id)
     }
     return render(request, 'director.html', context)
-
+def actor(request,id):
+    context = {
+      "actor": Actor.objects.get(id=id)
+    }
+    return render(request, 'actor.html', context)
     
 def movies(request):
     movies_querystring = Movie.objects.all()
@@ -60,17 +69,9 @@ def movie(request,id):
     }
     return render(request, 'movie.html', context)
 
-def actor(request):
-    context = {
-      "actor": Actor.objects.get(id=id)
-    }
-    return render(request, 'actors.html', context)
 
-def actors(request):
-    context = {
-        "actors": Actor.objects.all()
-    }
-    return render(request, 'actors.html', context)
+
+
 
 def homepage(request):
     context = {

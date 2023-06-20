@@ -5,8 +5,10 @@
 {% endblock %}
 
 {% block content %}
+<div>
 <h1>{{actor.name}}</h1>
 <h2>{{actor.birth_year}}</h2>
-<img src="{% if actor.photo_url %}{{actor.photo_url}}{% else %}https://place-hold.it/180x100/{% endif %}" alt="Card image cap">
-<p>{{ actor.description|safe }}</p>
+<img src="https://placekitten.com/g/200/150" class="card-img-top" alt="...">
+<p>{{actor.description|safe }}</p>
+</div>
 {% endblock content %}
